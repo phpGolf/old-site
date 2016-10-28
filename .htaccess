@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !=alectbm*
+RewriteRule ^([a-z]+)[/]*([0-9a-zA-Z\-]*)[/]*([0-9a-zA-Z\-]*)[/]*([0-9a-zA-Z\-]*)[/]*([0-9a-zA-Z\-]*)[/]*([0-9a-zA-Z\-]*) /index.php?p=$1&value[]=$2&value[]=$3&value[]=$4&value[]=$5&value[]=$6&%{QUERY_STRING} [NC]
+#RewriteRule ^([a-z]+)[/]([0-9a-zA-Z\-]*)[/] /index.php?p=$1&value=$2&%{QUERY_STRING} [NC]
+#RewriteRule ^([a-z]+)[/]*([0-9]*)$ /index.php?p=$1&id=$2%{QUERY_STRING} [NC]
